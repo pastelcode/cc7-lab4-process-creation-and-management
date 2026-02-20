@@ -30,7 +30,7 @@ int main() {
   } else {
     write(pipe_file_descriptor[1], message, MESSAGE_SIZE);
     printf("Parent Process: Writing \"%s\"\n", message);
-    waitpid(pid, NULL, WCONTINUED);
+    waitpid(pid, NULL, 0);
   }
   return 0;
 }

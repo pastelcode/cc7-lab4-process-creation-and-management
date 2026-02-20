@@ -17,7 +17,7 @@ int main() {
     sleep(2);
     printf("Child Process: PID=%d, Parent PID=%d\n", current_pid, getppid());
   } else {
-    waitpid(pid, NULL, WCONTINUED);
+    waitpid(pid, NULL, 0);
     printf("Parent Process: Child has finished execution.\n");
   }
   return 0;
