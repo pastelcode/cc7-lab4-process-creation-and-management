@@ -18,7 +18,7 @@ Links que usamos para investigar:
 ## Preguntas del documento (instrucciones de la práctica):
 
 1. **Los pasos de creación de procesos**
-El proceso de creación depende del sistema operativo en el que se trabaje. Si un usuario está en Linux, el programa llama a la función fork() para dividirse y crear un proceso hijo. A partir de ese momento, ambos procesos (padre e hijo) existen en el sistema al mismo tiempo. Si el usuario está en Windows, el programa hace una llamada a CreateProcess() para spawnear un proceso totalmente nuevo. En ambos casos, el sistema operativo le asigna espacio en memoria y un identificador único al nuevo proceso para poder administrarlo.
+El proceso de creación depende del sistema operativo en el que se trabaje. Si un usuario está en Linux, el programa llama a la función `fork()` para dividirse y crear un proceso hijo. A partir de ese momento, ambos procesos (padre e hijo) existen en el sistema al mismo tiempo. Si el usuario está en Windows, el programa hace una llamada a CreateProcess() para spawnear un proceso totalmente nuevo. En ambos casos, el sistema operativo le asigna espacio en memoria y un identificador único al nuevo proceso para poder administrarlo.
 
 2. **Cómo funciona la sincronización** 
 La sincronización sirve para poner orden. Cuando un proceso padre crea a un hijo, muchas veces el padre no debe seguir avanzando o cerrarse hasta que el hijo termine su tarea. Para lograr esto, el proceso padre se queda "esperando". En Linux esto se hace utilizando la función waitpid() , y en Windows se usa WaitForSingleObject(). Hacer esta pausa es súper importante para que el sistema haga una limpieza adecuada y se evite dejar procesos "zombies" consumiendo recursos en la computadora.
