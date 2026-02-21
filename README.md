@@ -23,8 +23,8 @@ El proceso de creación depende del sistema operativo en el que se trabaje. Si u
 2. **Cómo funciona la sincronización** 
 La sincronización sirve para poner orden, cuando un proceso padre crea a un hijo, muchas veces el padre no debe seguir avanzando o cerrarse hasta que el hijo termine su tarea. Para lograr esto, el proceso padre se queda "esperando". En Linux esto se hace utilizando la función waitpid() , y en Windows se usa WaitForSingleObject(). Hacer esta pausa es súper importante para que el sistema haga una limpieza adecuada y se evite dejar procesos "zombies" consumiendo recursos en la computadora.
 
-1. **Cómo funcionan los mecanismos de IPC**
-IPC significa Comunicación entre Procesos (Inter-Process Communication). Como los procesos suelen estar aislados por seguridad, necesitan mecanismos especiales para compartir información entre ellos. Hay dos formas principales que se exploran en esta práctica:**
+3. **Cómo funcionan los mecanismos de IPC**
+IPC significa Comunicación entre Procesos (Inter-Process Communication). Como los procesos suelen estar aislados por seguridad, necesitan mecanismos especiales para compartir información entre ellos. Hay dos formas principales que se exploramos en la práctica:
 
 - Tuberías (Pipes): Funcionan como un canal de una sola vía. Se crea la tubería con pipe() en Linux o CreatePipe() en Windows. Un proceso (como el padre) escribe un mensaje en un extremo de la tubería, y el otro proceso (el hijo) lo lee por el otro extremo.
 
