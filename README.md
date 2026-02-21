@@ -80,7 +80,7 @@ graph TD
         VH[Dirección Virtual 0xBBBB]
     end
     
-    subgraph Memoria Física (RAM)
+    subgraph "Memoria Física (RAM)"
         MF[(Frame Físico Público #500)]
     end
     
